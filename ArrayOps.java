@@ -3,55 +3,64 @@ public class ArrayOps {
     // Read REQ 02
     public String toText(int[] nums) {
         String result = "[";
+
         int n = nums.length;
+
         for (int i = 0; i < n; i++) {
             result += nums[i];
             if ((i + 1 < n)) {
                 result += ", ";
             }
         }
+
         return result + "]";
     }
 
     // Read REQ 03
     public int[] numbersFrom(int start, int end) {
         int num1 = end - start;
-        int[] num = new int[num1];
-        int length = num.length;
-        int[] a = new int[1];
+
         if (num1 <= 0) {
-            return a;
+            return new int[0];
         }
-        for (int i = 0; i < length; i++) {
-            num[i] += i + start;
+
+        int[] num = new int[num1];
+
+        for (int i = 0; i < num.length; i++) {
+            num[i] = start + i;
         }
+
         return num;
     }
 
     // Read REQ 04
     public double averageLength(String[] words) {
-        int length = words.length;
-        double result = 0.0;
-        int counter = 0;
-        for (int i = 0; i < length; i++) {
-            int word = words[i].length();
-            counter++;
-            result += word;
+        if (words.length == 0) {
+            return 0.0;
         }
-        result /= counter;
-        return result;
+
+        double result = 0.0;
+
+        for (int i = 0; i < words.length; i++) {
+            result += words[i].length();
+        }
+
+        return result / words.length;
     }
 
     // Read REQ 05
     public boolean hasWord(String[] words, String target) {
         int length = words.length;
+
         boolean result = false;
+
         for (int i = 0; i < length; i++) {
             String currentWord = words[i];
             if (currentWord.equals(target)) {
                 result = true;
             }
         }
+
         return result;
     }
 
@@ -79,6 +88,7 @@ public class ArrayOps {
                 return false;
             }
         }
+
         return true;
     }
 
@@ -102,7 +112,6 @@ public class ArrayOps {
         nums[nums.length - 1] = 0;
 
         return nums;
-
     }
 
     // Read REQ 10
@@ -116,6 +125,7 @@ public class ArrayOps {
         }
 
         int[] result = new int[count];
+
         int index = 0;
 
         for (int i = 0; i < nums.length; i++) {
