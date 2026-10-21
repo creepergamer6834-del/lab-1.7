@@ -26,36 +26,47 @@ public class ArrayOpsTester {
         System.out.println("blue -> " + ops.hasWord(colors, "blue"));
         System.out.println("green -> " + ops.hasWord(colors, "green"));
 
-        // System.out.println();
-        // System.out.println("=== indexOfLongest ===");
-        // String[] fruit = {"fig", "banana", "kiwi"};
-        // System.out.println("{fig, banana, kiwi} -> " + ops.indexOfLongest(fruit));
-        // System.out.println("{} -> " + ops.indexOfLongest(new String[0]));
+        System.out.println();
+        System.out.println("=== indexOfLongest ===");
+        String[] fruit = { "fig", "banana", "kiwi" };
+        System.out.println("{fig, banana, kiwi} -> " + ops.indexOfLongest(fruit));
+        System.out.println("{} -> " + ops.indexOfLongest(new String[0]));
 
-        // System.out.println();
-        // System.out.println("=== isIncreasing ===");
-        // System.out.println("{1, 4, 9, 10} -> " + ops.isIncreasing(new int[] {1, 4, 9,
-        // 10}));
-        // System.out.println("{5, 1, 2, 3} -> " + ops.isIncreasing(new int[] {5, 1, 2,
-        // 3}));
+        System.out.println();
+        System.out.println("=== isIncreasing ===");
+        System.out.println("{1, 4, 9, 10} -> " + ops.isIncreasing(new int[] { 1, 4, 9,
+                10 }));
+        System.out.println("{5, 1, 2, 3} -> " + ops.isIncreasing(new int[] { 5, 1, 2,
+                3 }));
 
-        // System.out.println();
-        // System.out.println("=== reversed ===");
-        // int[] original = {1, 2, 3};
-        // System.out.println("reversed -> " + ops.toText(ops.reversed(original)));
-        // System.out.println("original after -> " + ops.toText(original));
+        System.out.println();
+        System.out.println("=== reversed ===");
+        int[] original = { 1, 2, 3 };
+        System.out.println("reversed -> " + ops.toText(ops.reversed(original)));
+        System.out.println("original after -> " + ops.toText(original));
 
-        // System.out.println();
-        // System.out.println("=== removeAndShift ===");
-        // int[] shift = {1, 2, 3, 4};
-        // ops.removeAndShift(shift, 1);
-        // System.out.println("remove index 1 -> " + ops.toText(shift));
+        System.out.println();
+        System.out.println("=== removeAndShift ===");
+        int[] shift = { 1, 2, 3, 4 };
+        ops.removeAndShift(shift, 1);
+        System.out.println("remove index 1 -> " + ops.toText(shift));
 
-        // System.out.println();
-        // System.out.println("=== valuesInRange ===");
-        // int[] scores = {3, 12, 7, 20, 5};
-        // System.out.println("5 to 12 -> " + ops.toText(ops.valuesInRange(scores, 5,
-        // 12)));
-        // System.out.println("original after -> " + ops.toText(scores));
+        System.out.println();
+        System.out.println("=== valuesInRange ===");
+        int[] scores = { 3, 12, 7, 20, 5 };
+        System.out.println("5 to 12 -> " + ops.toText(ops.valuesInRange(scores, 5,
+                12)));
+        System.out.println("original after -> " + ops.toText(scores));
+
+        System.out.println();
+        System.out.println("=== hasMatchingEnds ===");
+        int[] match = { 1, 2, 3, 1, 2 };
+        System.out.println("n = 2 -> " + ops.hasMatchingEnds(match, 2));
+
+        System.out.println();
+        System.out.println("=== sumSkipping13 ===");
+        int[] skip = { 1, 2, 13, 2, 1 };
+        System.out.println("{1, 2, 13, 2, 1} -> "
+                + ops.sumSkipping13(skip));
     }
 }

@@ -57,26 +57,98 @@ public class ArrayOps {
 
     // Read REQ 06
     public int indexOfLongest(String[] words) {
-        return -999;
+        if (words.length == 0) {
+            return -1;
+        }
+
+        int longestIndex = 0;
+
+        for (int i = 1; i < words.length; i++) {
+            if (words[i].length() > words[longestIndex].length()) {
+                longestIndex = i;
+            }
+        }
+
+        return longestIndex;
     }
 
     // Read REQ 07
     public boolean isIncreasing(int[] nums) {
-        return false;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] >= nums[i + 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Read REQ 08
     public int[] reversed(int[] nums) {
-        return null;
+        int[] result = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = nums[nums.length - 1 - i];
+        }
+
+        return result;
     }
 
     // Read REQ 09
     public int[] removeAndShift(int[] nums, int index) {
-        return null;
+        for (int i = index; i < nums.length - 1; i++) {
+            nums[i] = nums[i + 1];
+        }
+
+        nums[nums.length - 1] = 0;
+
+        return nums;
+
     }
 
     // Read REQ 10
     public int[] valuesInRange(int[] nums, int low, int high) {
-        return null;
+        int count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= low && nums[i] <= high) {
+                count++;
+            }
+        }
+
+        int[] result = new int[count];
+        int index = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= low && nums[i] <= high) {
+                result[index] = nums[i];
+                index++;
+            }
+        }
+
+        return result;
+    }
+
+    public boolean hasMatchingEnds(int[] nums, int n) {
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != nums[nums.length - n + i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public int sumSkipping13(int[] nums) {
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 13) {
+                i++;
+            } else {
+                sum += nums[i];
+            }
+        }
+
+        return sum;
     }
 }
